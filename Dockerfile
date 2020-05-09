@@ -2,8 +2,9 @@ FROM debian:9-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y ca-certificates curl vim
+
 # enable this when you need certificates
-#RUN apt-get update && apt-get install -y ca-certificates curl vim
 #COPY ./ssl/*.crt /usr/local/share/ca-certificates/
 #RUN update-ca-certificates
 
