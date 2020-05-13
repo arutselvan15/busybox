@@ -13,7 +13,7 @@ while [ $c -le "$COUNT" ]
 do
   echo -n `date +"[%T]"`
   printf " [# %d] GET %s - " "${c}" "${URL}"
-  curl -o /dev/null -w '%{http_code}\n' -s "${URL}"
+  curl --silent --write-out ' - %{http_code}\n' -X GET "${URL}"
   c=`expr $c + 1`
   sleep 1
 done
