@@ -5,8 +5,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y ca-certificates curl vim
 
 # enable this when you need certificates
-COPY ./ssl/*.crt /usr/local/share/ca-certificates/
-RUN update-ca-certificates
+#COPY ./ssl/*.crt /usr/local/share/ca-certificates/
+#RUN update-ca-certificates
 
 # load test vegeta
 ADD http://github.com/tsenart/vegeta/releases/download/v5.9.0/vegeta-v5.9.0-linux-amd64.tar.gz /tmp/vegeta.tar.gz
